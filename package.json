@@ -1,0 +1,40 @@
+{
+  "name": "@chat-adapter/openclaw",
+  "version": "0.1.0",
+  "description": "OpenClaw adapter for chat",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts",
+    "dev": "tsup src/index.ts --watch --format esm --dts",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist",
+    "start:echo": "node examples/echo-bot.js"
+  },
+  "dependencies": {
+    "chat": "^4.14.0"
+  },
+  "devDependencies": {
+    "@chat-adapter/state-memory": "^4.14.0",
+    "@types/node": "^22.10.2",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  },
+  "keywords": [
+    "chat",
+    "openclaw",
+    "adapter"
+  ],
+  "license": "MIT"
+}
